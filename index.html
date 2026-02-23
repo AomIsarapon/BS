@@ -165,10 +165,10 @@
       background_color: '#F5F5F5'
     };
 
-    // Google Apps Script URL (แก้ไขเป็นของ BS)
-    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyTjWgpIK-wtlJgFxpR68fo7bP_gYYWZLfUAUBSRn8sm6Mlhsh4Tmj3qOfxdfIHAs5m/exec';
+    // Google Apps Script URL (แก้ไขเป็นลิ้งก์ BS)
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyTpxL-Ysbb7QrelcHFiLY0INeOA1wANagWjJH72A5xP1ZYcPtONGkuquFbzspwkSwz/exec';
     
-    // Local Storage Key (แก้ไขเป็นของ BS)
+    // Local Storage Key (แก้ไขเป็น BS)
     const STORAGE_KEY = '5s_score_data_bs';
 
     // Initialize Element SDK
@@ -351,7 +351,7 @@
       headerHTML += '<th colspan="4" class="border border-teal-300 px-2 py-2 bg-orange-500">พฤศจิกายน<br>ตรวจครั้งที่ 4</th>';
       headerHTML += '</tr>';
       
-      // Second row - sub headers (ล็อกชื่อตายตัวตามที่สั่ง)
+      // Second row - sub headers (ล็อกชื่อตายตัว)
       headerHTML += '<tr class="sub-header">';
       for (let i = 0; i < 4; i++) {
         headerHTML += '<th class="border border-gray-300 px-2 py-1">PD</th>';
@@ -417,12 +417,12 @@
             let cellValue = row[j] !== undefined ? row[j] : '';
             let cellClass = 'text-center';
             
-            // Color code score cells
+            // Color code score cells (เพิ่มเงื่อนไขสีสำหรับ -3)
             if (cellValue === 1 || cellValue === '1') cellClass += ' text-green-600 font-semibold';
             else if (cellValue === 0 || cellValue === '0') cellClass += ' text-red-700 font-semibold bg-red-50';
             else if (cellValue === -1 || cellValue === '-1') cellClass += ' text-red-700 font-semibold bg-red-50';
             else if (cellValue === -2 || cellValue === '-2') cellClass += ' text-red-700 font-semibold bg-red-50';
-            else if (cellValue === -3 || cellValue === '-3') cellClass += ' text-red-800 font-bold bg-red-50'; // เพิ่มสีสำหรับ -3
+            else if (cellValue === -3 || cellValue === '-3') cellClass += ' text-red-800 font-bold bg-red-50';
             
             bodyHTML += `<td class="border border-gray-300 px-2 py-2 score-cell ${cellClass}">${cellValue}</td>`;
           }
